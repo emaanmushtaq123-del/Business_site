@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Farine – Artisan Bakery</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">🥐</span>
+      <span class="logo-text">La Farine</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-order-btn" onclick="scrollToSection('contact')">Order Now</button>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="flour-particles" id="flourParticles"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Handcrafted with love since 1998</p>
+      <h1 class="hero-title">Where Every Bite<br/><em>Tells a Story</em></h1>
+      <p class="hero-sub">Fresh from our oven to your heart — artisan breads, pastries & cakes baked daily with the finest ingredients.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="scrollToSection('menu')">Explore Menu</button>
+        <button class="btn-ghost" onclick="scrollToSection('about')">Our Story</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-plate">
+        <div class="plate-ring"></div>
+        <div class="bread-illustration">🍞</div>
+      </div>
+      <div class="floating-badge badge-1"><span>🌾</span> 100% Natural</div>
+      <div class="floating-badge badge-2"><span>🔥</span> Baked Fresh Daily</div>
+      <div class="floating-badge badge-3"><span>⭐</span> Award Winning</div>
+    </div>
+    <div class="hero-scroll-hint" onclick="scrollToSection('menu')">
+      <span>Scroll to explore</span>
+      <i class="fas fa-chevron-down bounce"></i>
+    </div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>🥐 Fresh Croissants</span>
+      <span>🍰 Custom Cakes</span>
+      <span>🍞 Sourdough Bread</span>
+      <span>🧁 Gourmet Muffins</span>
+      <span>🥖 Baguettes</span>
+      <span>🍮 Crème Brûlée</span>
+      <span>🥐 Fresh Croissants</span>
+      <span>🍰 Custom Cakes</span>
+      <span>🍞 Sourdough Bread</span>
+      <span>🧁 Gourmet Muffins</span>
+      <span>🥖 Baguettes</span>
+      <span>🍮 Crème Brûlée</span>
+    </div>
+  </div>
+
+  <!-- ===== MENU ===== -->
+  <section class="section menu-section" id="menu">
+    <div class="section-header">
+      <p class="section-eyebrow">What We Bake</p>
+      <h2 class="section-title">Our Signature Creations</h2>
+      <p class="section-desc">Every item is lovingly crafted in small batches — because quality matters more than quantity.</p>
+    </div>
+
+    <div class="menu-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="breads">Breads</button>
+      <button class="filter-btn" data-filter="pastries">Pastries</button>
+      <button class="filter-btn" data-filter="cakes">Cakes</button>
+      <button class="filter-btn" data-filter="drinks">Drinks</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid">
+
+      <div class="menu-card" data-category="pastries">
+        <div class="card-img"><span class="card-emoji">🥐</span></div>
+        <div class="card-badge">Bestseller</div>
+        <div class="card-body">
+          <h3>Butter Croissant</h3>
+          <p>Perfectly laminated, 72-hour cold fermented, golden & impossibly flaky.</p>
+          <div class="card-footer">
+            <span class="price">Rs. 180</span>
+            <button class="add-btn" onclick="addToCart(this, 'Butter Croissant', 180)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="breads">
+        <div class="card-img"><span class="card-emoji">🍞</span></div>
+        <div class="card-badge new">New</div>
+        <div class="card-body">
+          <h3>Classic Sourdough</h3>
+          <p>Tangy, open-crumb loaf with a crackling crust — fermented for 24 hours.</p>
+          <div class="card-footer">
+            <span class="price">Rs. 450</span>
+            <button class="add-btn" onclick="addToCart(this, 'Classic Sourdough', 450)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="cakes">
+        <div class="card-img"><span class="card-emoji">🍰</span></div>
+        <div class="card-badge">Popular</div>
+        <div class="card-body">
+          <h3>Strawberry Dream Cake</h3>
+          <p>Three layers of vanilla sponge, fresh strawberries, and whipped cream.</p>
+          <div class="card-footer">
+            <span class="price">Rs. 1,200</span>
+            <button class="add-btn" onclick="addToCart(this, 'Strawberry Dream Cake', 1200)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="pastries">
+        <div class="card-img"><span class="card-emoji">🧁</span></div>
+        <div class="card-body">
+          <h3>Salted Caramel Muffin</h3>
+          <p>Moist, rich caramel muffin topped with a sprinkle of fleur de sel.</p>
+          <div class="card-footer">
+            <span class="price">Rs. 220</span>
+            <button class="add-btn" onclick="addToCart(this, 'Salted Caramel Muffin', 220)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="breads">
+        <div class="card-img"><span class="card-emoji">🥖</span></div>
+        <div class="card-body">
+          <h3>French Baguette</h3>
+          <p>Traditional French-style, crispy crust, soft airy interior. Baked twice daily.</p>
+          <div class="card-footer">
+            <span class="price">Rs. 280</span>
+            <button class="add-btn" onclick="addToCart(this, 'French Baguette', 280)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="cakes">
+        <div class="card-img"><span class="card-emoji">🎂</span></div>
+        <div class="card-badge">Seasonal</div>
+        <div class="card-body">
+          <h3>Dark Chocolate Ganache</h3>
+          <p>Indulgent Belgian chocolate cake with silky ganache and gold leaf finish.</p>
+          <div class="card-footer">
+            <span class="price">Rs. 1,600</span>
+            <button class="add-btn" onclick="addToCart(this, 'Dark Chocolate Ganache', 1600)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="drinks">
+        <div class="card-img"><span class="card-emoji">☕</span></div>
+        <div class="card-body">
+          <h3>Artisan Espresso</h3>
+          <p>Single-origin, hand-pulled espresso with velvety microfoam. The perfect companion.</p>
+          <div class="card-footer">
+            <span class="price">Rs. 320</span>
+            <button class="add-btn" onclick="addToCart(this, 'Artisan Espresso', 320)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="pastries">
+        <div class="card-img"><span class="card-emoji">🍮</span></div>
+        <div class="card-badge new">New</div>
+        <div class="card-body">
+          <h3>Crème Brûlée Tart</h3>
+          <p>Buttery shell, creamy custard, torched sugar — a masterpiece in every bite.</p>
+          <div class="card-footer">
+            <span class="price">Rs. 380</span>
+            <button class="add-btn" onclick="addToCart(this, 'Crème Brûlée Tart', 380)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty"><i class="fas fa-shopping-bag"></i><p>Your cart is empty</p></div>
+    </div>
+    <div class="cart-total" id="cartTotal" style="display:none;">
+      <div class="total-row"><span>Subtotal</span><span id="subtotal">Rs. 0</span></div>
+      <div class="total-row"><span>Delivery</span><span>Rs. 150</span></div>
+      <div class="total-row total-final"><span>Total</span><span id="grandTotal">Rs. 0</span></div>
+      <button class="btn-primary full-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Cart floating button -->
+  <button class="cart-float" id="cartFloat" onclick="toggleCart()" style="display:none;">
+    <i class="fas fa-shopping-bag"></i>
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about-section" id="about">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img-box">
+          <div class="about-main-img"><span>👨‍🍳</span></div>
+          <div class="about-stat stat-1"><strong>26</strong><span>Years of Baking</span></div>
+          <div class="about-stat stat-2"><strong>50+</strong><span>Recipes</span></div>
+          <div class="about-stat stat-3"><strong>4.9★</strong><span>Customer Rating</span></div>
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Baked from the Heart,<br/>Served with Soul</h2>
+        <p>La Farine was born in 1998 from a small family kitchen in Lahore. Our founder, Chef Amara, dreamed of bringing the warmth of French artisan baking to Pakistan — without compromising on tradition or quality.</p>
+        <p>Every morning at 4 AM, our bakers arrive to begin the day's work. No shortcuts, no preservatives, no compromises. Just flour, water, salt, time, and a lifetime of passion.</p>
+        <div class="about-values">
+          <div class="value-item"><i class="fas fa-leaf"></i><span>100% Natural Ingredients</span></div>
+          <div class="value-item"><i class="fas fa-clock"></i><span>Slow Fermentation Process</span></div>
+          <div class="value-item"><i class="fas fa-heart"></i><span>Made with Intention</span></div>
+        </div>
+        <button class="btn-primary" onclick="scrollToSection('contact')">Visit Our Bakery</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials-section">
+    <div class="section-header">
+      <p class="section-eyebrow">What Our Guests Say</p>
+      <h2 class="section-title">Words from the Table</h2>
+    </div>
+    <div class="testimonials-track" id="testimonialsTrack">
+      <div class="testimonial-card">
+        <p class="t-quote">"The sourdough changed my life. I drive 45 minutes every Sunday just for it."</p>
+        <div class="t-author"><span class="t-avatar">👩</span><div><strong>Sana R.</strong><small>Lahore</small></div></div>
+        <div class="t-stars">★★★★★</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="t-quote">"The wedding cake was beyond our expectations. Absolutely stunning and divine."</p>
+        <div class="t-author"><span class="t-avatar">👨</span><div><strong>Imran & Zara</strong><small>Islamabad</small></div></div>
+        <div class="t-stars">★★★★★</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="t-quote">"Croissants that rival Paris. I'm not exaggerating — these are genuinely world-class."</p>
+        <div class="t-author"><span class="t-avatar">👩</span><div><strong>Nadia K.</strong><small>Karachi</small></div></div>
+        <div class="t-stars">★★★★★</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="t-quote">"My kids refuse to eat bread from anywhere else. La Farine is family now."</p>
+        <div class="t-author"><span class="t-avatar">👨</span><div><strong>Tariq M.</strong><small>Rawalpindi</small></div></div>
+        <div class="t-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="testimonial-dots" id="testimonialDots"></div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="section gallery-section" id="gallery">
+    <div class="section-header">
+      <p class="section-eyebrow">Behind the Glass</p>
+      <h2 class="section-title">The Bakery in Pictures</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item g-large"><span class="g-emoji">🥐</span><div class="g-overlay"><p>Morning Croissants</p></div></div>
+      <div class="gallery-item"><span class="g-emoji">🍰</span><div class="g-overlay"><p>Celebration Cakes</p></div></div>
+      <div class="gallery-item"><span class="g-emoji">☕</span><div class="g-overlay"><p>Coffee Corner</p></div></div>
+      <div class="gallery-item g-wide"><span class="g-emoji">🍞</span><div class="g-overlay"><p>The Bread Wall</p></div></div>
+      <div class="gallery-item"><span class="g-emoji">🧁</span><div class="g-overlay"><p>Cupcake Bar</p></div></div>
+      <div class="gallery-item"><span class="g-emoji">👨‍🍳</span><div class="g-overlay"><p>Our Bakers</p></div></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">Come Say Hello</h2>
+        <p>We'd love to meet you in person. Drop by for a fresh croissant and a warm cup of coffee.</p>
+        <div class="info-items">
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong><span>12 Gulberg III, Main Boulevard, Lahore, Punjab</span></div></div>
+          <div class="info-item"><i class="fas fa-clock"></i><div><strong>Hours</strong><span>Mon–Sat: 7:00 AM – 9:00 PM<br/>Sunday: 8:00 AM – 6:00 PM</span></div></div>
+          <div class="info-item"><i class="fas fa-phone"></i><div><strong>Phone</strong><span>+92 42 3571 8800</span></div></div>
+          <div class="info-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><span>hello@lafarine.pk</span></div></div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="contact-form-box">
+        <h3>Send Us a Message</h3>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Ali Raza" id="formName"/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+92 300 0000000" id="formPhone"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@example.com" id="formEmail"/>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select id="formSubject">
+              <option>Custom Cake Order</option>
+              <option>Bulk Order / Catering</option>
+              <option>General Inquiry</option>
+              <option>Feedback</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us about your order or question..." rows="4" id="formMessage"></textarea>
+          </div>
+          <button type="button" class="btn-primary full-btn" onclick="submitForm()">Send Message <i class="fas fa-paper-plane"></i></button>
+          <div class="form-success" id="formSuccess" style="display:none;">
+            <i class="fas fa-check-circle"></i> Message sent! We'll reply within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo"><span class="logo-icon">🥐</span><span class="logo-text">La Farine</span></div>
+        <p>Handcrafted with love since 1998. Where every bite tells a story.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Our Specials</h4>
+        <ul>
+          <li><a href="#">Sourdough Bread</a></li>
+          <li><a href="#">Butter Croissants</a></li>
+          <li><a href="#">Custom Cakes</a></li>
+          <li><a href="#">Wedding Cakes</a></li>
+          <li><a href="#">Corporate Orders</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay in Touch</h4>
+        <p>Get weekly specials & baking tips straight to your inbox.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" id="newsEmail"/>
+          <button onclick="subscribeNewsletter()"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div id="newsSuccess" style="display:none; color: #7A9E7E; margin-top:8px; font-size:0.85rem;">✓ Subscribed!</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 La Farine Artisan Bakery. All rights reserved. Made with 🍞 in Lahore, Pakistan.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
